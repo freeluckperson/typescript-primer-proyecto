@@ -1,10 +1,19 @@
-interface Persona {
-  nombre: string,
-  apellido: string,
-  hombre?: boolean,
+class Pelicula {
+  nombre?: string;
+  protagonistas?: string[];
+  actores?: string[];
+
+  proyectarEnCine() {
+    console.log(`La película ${this.nombre} está siendo proyectada`);
+  }
+
+  constructor(nombre: string, protagonistas: string[], actores: string[]) {
+    this.nombre = nombre;
+    this.protagonistas = protagonistas;
+    this.actores = actores;
+  }
 }
 
-let persona: Persona = { nombre: "erick", apellido: "segura", hombre: true };
+const pelicula = new Pelicula("Matrix", ["Neo", "Trinity"], ["Keanu Reeves"]);
 
-let persona2: Persona = { nombre: "erick", apellido: "segura" };
-console.log(persona);
+console.log(pelicula);
